@@ -1,0 +1,248 @@
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+
+html {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    /* 
+    The background property is a shorthand property for:
+        background-color
+        background-image
+        background-position
+        background-size
+        background-repeat
+        background-origin
+        background-clip
+        background-attachment
+
+    It does not matter if one of the values above are missing */
+    background: url("../img/1.jpg") center center no-repeat fixed; /* background-image, background-position, background-repeat, background-attachment */
+    background-size: cover;
+    /* background-position: center; */ 
+
+    font-family: tahoma;
+
+    color: #0a0a0b;
+
+    overflow: hidden;
+}
+
+
+nav, ul {
+    /* 
+    The list-style property is a shorthand for the following properties:
+        list-style-type
+        list-style-position
+        list-style-image
+
+    If one of the values are missing, the default value for that property will be used. */
+    list-style: none; 
+
+    padding: 0;
+}
+
+
+a {
+    text-decoration: none; 
+
+    color: white;
+
+    cursor: pointer;
+}
+
+
+h1, h2 {
+    font-family: tahoma;
+    font-weight: 500; 
+}
+
+
+h1 {
+    margin: 0 0 1.5rem; /* top = 0, right/left = 0, bottom = 1.5 */
+
+    font-size: 2.8rem;
+    
+    letter-spacing: 4px;
+
+    color: white;
+}
+
+
+header {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+
+    
+    position: absolute; 
+    top: 0;
+    left: 0;
+
+    padding: 10px 100px 0; /* top = 10, right/left = 100, bottom = 0 */
+
+ 
+    
+    width: 100%;    
+    /* ----------------------------- */
+
+    /* background-color: chocolate; */ /* DEBUG */
+    color: white;
+
+    z-index: 10;
+}
+
+
+header nav ul {
+    display: flex; 
+}
+
+
+header nav li {
+    margin: 0 15px; /* top/bottom = 0, right/left = 15 */
+}
+
+header nav li:first-child {
+    margin-left: 0;
+}
+
+header nav li:last-child {
+    margin-right: 0;
+}
+
+
+a.btn {
+    padding: 10px;
+
+    background: #d73851;
+    color: white;
+
+    transition: all .2s;
+}
+
+
+
+.cover {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column; /* main axis vertical */
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px 50px; /* top/bottom = 20, right/left = 50 */
+
+    /* background-color: violet; */ /* DEBUG */
+
+    width: 100%;
+    height: 100vh;
+
+    background: linear-gradient(to bottom, rgba(0,0,0,.05) 0%, rgba(0,0,0,0) 100%);    
+}
+
+
+
+.flex-form {
+    display: flex;
+    display: -webkit-box; /* http://help.dottoro.com/lckcfgbc.php */
+
+    position: relative;
+
+    width: 500px;
+
+    box-shadow: 4px 8px 16px rgba(0, 0, 0, .3);
+
+    z-index: 10;
+}
+
+
+.flex-form > * {
+    padding: 0 0 0 10px; /* top right bottom left */
+
+    font-size: 1rem;
+
+    line-height: 50px; 
+
+    border: 0;
+    border-radius: 0; 
+
+    /* 
+    An outline is a line that is drawn around elements, outside the borders, to make the element "stand out".
+
+    The outline property is a shorthand property for:
+        outline-width
+        outline-style (required)
+        outline-color
+
+    If outline-color is omitted, the color applied will be the color of the text. */
+    outline: 0;
+
+    background: white;
+
+    -webkit-appearance: none; /* DEPRECATED */
+}
+
+
+
+
+.flex-form input[type="submit"] {
+    padding: 0 30px; /* top/bottom = 0, right/left = 30 */
+
+    background: #ef3f5a;
+    color: white;
+
+    border: 1px solid #ef3f5a;
+
+    cursor: pointer;
+
+    transition: all .2s;
+}
+
+
+
+.flex-form input[type="search"] {
+    flex-basis: 500px; 
+}
+
+
+
+
+/* MEDIA QUERIES ------------------------------------------- */
+@media all and (max-width: 800px) {
+    body {
+        font-size: .9rem;
+    }
+
+    .flex-form {
+        width: 100%;
+    }
+
+    input[type="search"] {
+        flex-basis: 100%;
+    }
+
+    .flex-form > * {
+        font-size: .9rem;
+    }
+
+    header {
+        flex-direction: column;
+        padding: 10px !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
